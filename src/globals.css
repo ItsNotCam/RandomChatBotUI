@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.chat-item-user {
+	@apply flex justify-end;
+}
+
+.chat-item-bot {
+	@apply flex justify-start;
+}
+
+.chat-bubble {
+	@apply max-w-[85%];
+}
+
+.chat-item-user .chat-bubble p {
+	border-top-right-radius: 0.2rem;
+}
+
+.chat-item-bot .chat-bubble p {
+	/* @apply bg-transparent w-full flex justify-start; */
+	@apply w-full flex justify-start;
+	border-top-left-radius: 0.2rem;
+	position: relative;
+}
+
+/* .chat-item-bot .chat-bubble::before {
+	content: '';
+	background-image: url("public/robot.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: -1.5rem;
+	left: -1.3rem;
+	height: 2.1875rem;
+	width: 2.1875rem;
+} */
+
+.chat-bubble p {
+	@apply bg-gray-700 py-3 px-5 text-gray-300;
+	border-radius: 0.6rem;
+}
+
+.chat-item-bot p {
+	@apply bg-gray-500 text-black;
+}
+
+.chat-parent-container {
+	@apply flex justify-center items-center flex-col gap-10;
+	width: clamp(38rem, 50%, 50rem);
+	height: 86svh;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #5e5e5e #454545;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #454545;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5e5e5e;
+    border-radius: 20px;
+    border: 5px none #ffffff;
+  }
